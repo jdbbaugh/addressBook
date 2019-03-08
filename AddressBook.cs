@@ -10,7 +10,7 @@ public class AddressBook
     Person.Add(contact.Email, contact);
   }
 
-  public void GetByEmail(string email)
+  public Contact GetByEmail(string email)
   {
 
   }
