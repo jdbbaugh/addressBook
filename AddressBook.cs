@@ -12,6 +12,6 @@ public class AddressBook
 
   public Contact GetByEmail(string email)
   {
-
+    return Person[email];
   }
 }
