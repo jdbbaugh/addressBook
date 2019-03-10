@@ -59,11 +59,19 @@ class Program
         //  Search the AddressBook by email and print the information about each Contact
         foreach (string email in emails)
         {
+            try
+            {
             Contact contact = addressBook.GetByEmail(email);
             Console.WriteLine("----------------------------");
             Console.WriteLine($"Name: {contact.FullName}");
             Console.WriteLine($"Email: {contact.Email}");
             Console.WriteLine($"Address: {contact.Address}");
+            }
+            catch (KeyNotFoundException)
+            {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine($"The Email:{email} is not in your Address Book");
+            }
         }
     }
 }

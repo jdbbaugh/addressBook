@@ -7,7 +7,15 @@ public class AddressBook
 
   public void AddContact(Contact contact)
   {
+    try
+    {
     Person.Add(contact.Email, contact);
+    }
+    catch(ArgumentException)
+    {
+      Console.WriteLine($"You've already added {contact.FirstName} as a contact");
+    }
+
   }
 
   public Contact GetByEmail(string email)
